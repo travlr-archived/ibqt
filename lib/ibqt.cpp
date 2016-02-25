@@ -68,8 +68,10 @@ void IBQt::connectToTWS(const QByteArray &host, quint16 port, int clientId)
     encodeField(CLIENT_VERSION);
     send();
     while (m_lock) {
+        qDebug() << "IN LOCK";
         delay(100);
     }
+    qDebug() << "IS UNLOCKED.. MOVING ON";
 }
 
 
@@ -97,7 +99,7 @@ void IBQt::send()
 {
 //    qDebug() << "[DEBUG-send] debugBuffer" << m_debugBuffer;
     m_debugBuffer.clear();
-    qDebug() << "[DEBUG-send] rawBuffer" << m_outBuffer;
+//    qDebug() << "[DEBUG-send] rawBuffer" << m_outBuffer;
 
     int sent = m_socket->write(m_outBuffer);
 
@@ -2843,6 +2845,7 @@ void IBQt::onSocketError(QAbstractSocket::SocketError socketError)
 void IBQt::onManagedAccounts(const QByteArray &accountsList)
 {
     Q_UNUSED(accountsList)
+    qDebug() << "UNLOCKING NOW";
     m_lock = false;
 }
 
