@@ -68,10 +68,8 @@ void IBQt::connectToTWS(const QByteArray &host, quint16 port, int clientId)
     encodeField(CLIENT_VERSION);
     send();
     while (m_lock) {
-//        qDebug() << "IN LOCK";
         delay(100);
     }
-//    qDebug() << "IS UNLOCKED.. MOVING ON";
 }
 
 

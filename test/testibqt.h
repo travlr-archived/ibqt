@@ -15,6 +15,7 @@ public slots:
 
 private slots:
     void onTwsConnected();
+    void onManagedAccounts(const QByteArray & accountsList);
     void onContractDetails(int reqId, const ContractDetails & contractDetails);
     void onContractDetailsEnd(int reqId);
 

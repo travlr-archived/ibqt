@@ -5,25 +5,30 @@
 #ifndef IBQt_H
 #define IBQt_H
 
-//#include "ibclient_global.h"
-
-#include "ibticktype.h"
+#include "ibbardata.h"
+#include "ibcommissionreport.h"
+#include "ibcontract.h"
+#include "ibdefines.h"
+#include "ibexecution.h"
 #include "ibfadatatype.h"
 #include "iborder.h"
 #include "iborderstate.h"
-#include "ibexecution.h"
-#include "ibcontract.h"
+#include "ibscandata.h"
+#include "ibsocketerrors.h"
+#include "ibtagvalue.h"
+#include "ibticktype.h"
+
 #include <QObject>
 #include <QTcpSocket>
 
 //struct ContractDetails;
 //struct Contract;
-struct CommissionReport;
-struct UnderComp;
+//struct CommissionReport;
+//struct UnderComp;
 //struct Order;
 //struct OrderState;
 //struct Execution;
-struct TagValue;
+//struct TagValue;
 
 
 #define TickerId long
