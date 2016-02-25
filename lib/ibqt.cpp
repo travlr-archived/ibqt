@@ -68,10 +68,10 @@ void IBQt::connectToTWS(const QByteArray &host, quint16 port, int clientId)
     encodeField(CLIENT_VERSION);
     send();
     while (m_lock) {
-        qDebug() << "IN LOCK";
+//        qDebug() << "IN LOCK";
         delay(100);
     }
-    qDebug() << "IS UNLOCKED.. MOVING ON";
+//    qDebug() << "IS UNLOCKED.. MOVING ON";
 }
 
 
@@ -2845,7 +2845,7 @@ void IBQt::onSocketError(QAbstractSocket::SocketError socketError)
 void IBQt::onManagedAccounts(const QByteArray &accountsList)
 {
     Q_UNUSED(accountsList)
-    qDebug() << "UNLOCKING NOW";
+//    qDebug() << "UNLOCKING NOW";
     m_lock = false;
 }
 
